@@ -1,9 +1,9 @@
-mod Vec3;
+mod vec3;
 
 fn main() {
   let nx = 200;
   let ny = 100;
-  let v = Vec3::new(3.14,2.71,4.2);
+  let v = vec3::Vec3::new(3.14,2.71,4.2);
   println!("P3\n{} {} {}\n",v.e[0],v.e[1],v.e[2]);
   println!("P3\n{} {}\n255",nx,ny);
   //jlet col = vec3{e[0]:
