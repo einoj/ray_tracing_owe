@@ -1,5 +1,15 @@
+use std::ops::Index;
+
 pub struct Vec3 {
   pub e: [f64; 3],
+}
+
+impl Index<usize> for Vec3 {
+    type Output = f64;
+
+    fn index<'a>(&'a self, index: usize) -> &'a f64{
+        &self.e[index]
+    }
 }
 
 impl Vec3 {
