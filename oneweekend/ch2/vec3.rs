@@ -12,6 +12,7 @@ impl Index<usize> for Vec3 {
     }
 }
 
+#[allow(dead_code)]
 impl Vec3 {
   pub fn new(e0: f64, e1: f64, e2: f64) -> Vec3 {
     Vec3 { e: [e0, e1, e2]}
