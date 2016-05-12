@@ -7,7 +7,7 @@ pub struct Vec3 {
 impl Index<usize> for Vec3 {
     type Output = f64;
 
-    fn index<'a>(&'a self, index: usize) -> &'a f64{
+    fn index<'a>(&'a self, index: usize) -> &'a f64 {
         &self.e[index]
     }
 }

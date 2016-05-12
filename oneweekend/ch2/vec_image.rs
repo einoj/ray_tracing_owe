@@ -1,11 +1,13 @@
-mod vec3;
+//mod vec3;
+extern crate vec3;
 
 fn main() {
   let nx = 200;
   let ny = 100;
   let v = vec3::Vec3::new(3.14,2.71,4.2);
+  let v2 = vec3::Vec3 { e: [3.14,2.71,4.2] };
   println!("P3\n{} {} {}\n",v.e[0],v.e[1],v.e[2]);
-  println!("P3\n{} {} {}\n",v[0],v[1],v[2]);
+  println!("P3\n{} {} {}\n",v2[0],v[1],v[2]);
   println!("P3\n{} {}\n255",nx,ny);
   //jlet col = vec3{e[0]:
 //  for j in (0..ny).rev(){
