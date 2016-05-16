@@ -1,5 +1,6 @@
 use std::ops::Index;
 use std::ops::Add;
+use std::ops::Mul;
 
 pub struct Vec3 {
   pub e: [f64; 3],
@@ -21,11 +22,20 @@ impl<'a, 'b> Add<&'b Vec3> for &'a Vec3 {
   }
 }
 
-impl Add for  Vec3 {
+impl Add for Vec3 {
   type Output = Vec3;
 
   fn add(self, other: Vec3) -> Vec3 {
     Vec3 { e: [self.e[0] + other.e[0],  self.e[1] + other.e[1], self.e[2] + other.e[2]]}
+  }
+}
+
+// Implements dot product
+impl Mul for Vec3 {
+  type Output = Vec3;
+
+  fn mul(self, other: Vec3) -> Vec3 {
+    Vec3 { e:[self.e[0] * other.e[0],self.e[1] * other.e[1],self.e[2] * other.e[2]]}
   }
 }
 
