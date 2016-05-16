@@ -1,4 +1,5 @@
 use std::ops::Index;
+use std::ops::Add;
 
 pub struct Vec3 {
   pub e: [f64; 3],
@@ -10,6 +11,14 @@ impl Index<usize> for Vec3 {
     fn index<'a>(&'a self, index: usize) -> &'a f64 {
         &self.e[index]
     }
+}
+
+impl<'a, 'b> Add<&'b Vec3> for &'a Vec3 {
+  type Output = Vec3;
+
+  fn add(self, other: &'b Vec3) -> Vec3 {
+    Vec3 { e: [self.e[0] + other.e[0],  self.e[1] + other.e[1], self.e[2] + other.e[2]]}
+  }
 }
 
 #[allow(dead_code)]

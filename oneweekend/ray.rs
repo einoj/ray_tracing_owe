@@ -1,13 +1,22 @@
 extern crate vec3;
 
 pub struct Ray {
-  A: vec3::Vec3,
-  B: vec3::Vec3,
+  origin: vec3::Vec3,
+  direction: vec3::Vec3,
 }
 
 impl Ray {
 
-  pub fn origin(&self) -> vec3::Vec3 {
-    self.A
+  pub fn origin(self) -> vec3::Vec3 {
+    self.origin
+  }
+
+  pub fn direction(self) -> vec3::Vec3 {
+    self.direction
+  }
+
+  pub fn point_at_parameter(self, t: f64) {
+    self.origin + t*self.direction
   }
 }
+
