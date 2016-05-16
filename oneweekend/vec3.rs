@@ -21,6 +21,14 @@ impl<'a, 'b> Add<&'b Vec3> for &'a Vec3 {
   }
 }
 
+impl Add for  Vec3 {
+  type Output = Vec3;
+
+  fn add(self, other: Vec3) -> Vec3 {
+    Vec3 { e: [self.e[0] + other.e[0],  self.e[1] + other.e[1], self.e[2] + other.e[2]]}
+  }
+}
+
 #[allow(dead_code)]
 impl Vec3 {
   pub fn new(e0: f64, e1: f64, e2: f64) -> Vec3 {
