@@ -74,3 +74,6 @@ impl Vec3 {
     self.e[0]
   }
 }
+
+fn unit_vector(v: Vec3) -> Vec3 {
+}
