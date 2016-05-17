@@ -30,12 +30,22 @@ impl Add for Vec3 {
   }
 }
 
-// Implements dot product
+// Implements dot product 
+// WARN Moves Vec3!
 impl Mul for Vec3 {
   type Output = Vec3;
 
   fn mul(self, other: Vec3) -> Vec3 {
     Vec3 { e:[self.e[0] * other.e[0],self.e[1] * other.e[1],self.e[2] * other.e[2]]}
+  }
+}
+
+// Implements scalar product
+impl Mul<f64> for Vec3 {
+  type Output = Vec3;
+
+  fn mul(self, f: f64) -> Vec3 {
+    Vec3 { e:[self.e[0] * f, self.e[1] * f, self.e[2] * f]}
   }
 }
 

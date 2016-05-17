@@ -15,8 +15,8 @@ impl Ray {
     self.direction
   }
 
-  pub fn point_at_parameter(self, t: f64) {
-    self.origin + t*self.direction
+  pub fn point_at_parameter(self, t: f64) -> vec3::Vec3 {
+    self.origin + self.direction*t
   }
 }
 
