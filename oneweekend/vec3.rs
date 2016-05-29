@@ -1,6 +1,7 @@
 use std::ops::Index;
 use std::ops::Add;
 use std::ops::Mul;
+use std::ops::Div;
 
 pub struct Vec3 {
   pub e: [f64; 3],
@@ -41,11 +42,20 @@ impl Mul for Vec3 {
 }
 
 // Implements scalar product
+// needs to be vector * scalar
 impl Mul<f64> for Vec3 {
   type Output = Vec3;
 
   fn mul(self, f: f64) -> Vec3 {
     Vec3 { e:[self.e[0] * f, self.e[1] * f, self.e[2] * f]}
+  }
+}
+
+impl Div<f64> for Vec3 {
+  type Output = Vec3;
+
+  fn div(self, f: f64) -> Vec3 {
+    Vec3 { e:[self.e[0] / f, self.e[1] / f, self.e[2] / f]}
   }
 }
 
@@ -73,7 +83,12 @@ impl Vec3 {
   fn b(&self) -> f64 {
     self.e[0]
   }
+
+  pub fn length(&self) -> f64 {
+   (self.e[0]*self.e[0] + self.e[1]*self.e[1] + self.e[2]*self.e[2]).sqrt()
+  }
 }
 
-fn unit_vector(v: Vec3) -> Vec3 {
-}
+//fn unit_vector(v: Vec3) -> Vec3 {
+//  v/v.length()
+//}
