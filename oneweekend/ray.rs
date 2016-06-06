@@ -1,11 +1,16 @@
 extern crate vec3;
 
+#[derive(Copy, Clone)]
 pub struct Ray {
   pub origin: vec3::Vec3,
   pub direction: vec3::Vec3,
 }
 
 impl Ray {
+
+  pub fn new(a: &vec3::Vec3, b: &vec3::Vec3) -> Ray {
+    Ray{origin:*a, direction:*b}
+  }
 
   pub fn origin(self) -> vec3::Vec3 {
     self.origin

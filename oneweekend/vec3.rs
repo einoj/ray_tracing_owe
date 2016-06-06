@@ -3,6 +3,7 @@ use std::ops::Add;
 use std::ops::Mul;
 use std::ops::Div;
 
+#[derive(Copy, Clone)]
 pub struct Vec3 {
   pub e: [f64; 3],
 }
@@ -65,22 +66,22 @@ impl Vec3 {
     Vec3 { e: [e0, e1, e2]}
   }
 
-  fn x(&self) -> f64 {
+  pub fn x(&self) -> f64 {
     self.e[0]
   }
-  fn y(&self) -> f64 {
+  pub fn y(&self) -> f64 {
     self.e[1]
   }
-  fn z(&self) -> f64 {
+  pub fn z(&self) -> f64 {
     self.e[0]
   }
-  fn r(&self) -> f64 {
+  pub fn r(&self) -> f64 {
     self.e[0]
   }
-  fn g(&self) -> f64 {
+  pub fn g(&self) -> f64 {
     self.e[1]
   }
-  fn b(&self) -> f64 {
+  pub fn b(&self) -> f64 {
     self.e[0]
   }
 
@@ -89,6 +90,6 @@ impl Vec3 {
   }
 }
 
-//fn unit_vector(v: Vec3) -> Vec3 {
-//  v/v.length()
-//}
+pub fn unit_vector(v: Vec3) -> Vec3 {
+  v/v.length()
+}
