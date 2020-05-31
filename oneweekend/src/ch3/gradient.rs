@@ -1,6 +1,3 @@
-extern crate ray;
-extern crate vec3;
-
 fn color(r: &ray::Ray) -> vec3::Vec3 {
   let unit_direction = vec3::unit_vector(r.direction());
   let t:f64 = 0.5*(unit_direction.y()+1.0);

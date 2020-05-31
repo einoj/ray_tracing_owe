@@ -1,5 +1,3 @@
-extern crate vec3;
-
 #[derive(Copy, Clone)]
 pub struct Ray {
   pub origin: vec3::Vec3,

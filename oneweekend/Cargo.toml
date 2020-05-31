@@ -1,0 +1,25 @@
+[package]
+name = "oneweekend"
+version = "0.1.0"
+authors = ["eino"]
+edition = "2018"
+include = ["src/*", "Cargo.toml"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[dependencies.vec3]
+path = "vec3"
+
+[dependencies.ray]
+path = "ray"
+
+[[bin]]
+name = "ch1"
+path = "src/ch1/hello_image.rs"
+
+[[bin]]
+name = "ch2"
+path = "src/ch2/vec_image.rs"
+
+[[bin]]
+name = "ch3"
+path = "src/ch3/gradient.rs"
