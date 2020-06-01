@@ -1,5 +1,6 @@
 use std::ops::Index;
 use std::ops::Add;
+use std::ops::Sub;
 use std::ops::Mul;
 use std::ops::Div;
 
@@ -29,6 +30,14 @@ impl Add for Vec3 {
 
   fn add(self, other: Vec3) -> Vec3 {
     Vec3 { e: [self.e[0] + other.e[0],  self.e[1] + other.e[1], self.e[2] + other.e[2]]}
+  }
+}
+
+impl Sub for Vec3 {
+  type Output = Vec3;
+
+  fn sub(self, other: Vec3) -> Vec3 {
+    Vec3 { e: [self.e[0] - other.e[0],  self.e[1] - other.e[1], self.e[2] - other.e[2]]}
   }
 }
 
