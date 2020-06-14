@@ -41,7 +41,7 @@ impl Sub for Vec3 {
   }
 }
 
-// Implements dot product 
+// Implements Hadamard product, element wise multiplication
 // WARN Moves Vec3!
 impl Mul for Vec3 {
   type Output = Vec3;
@@ -49,6 +49,10 @@ impl Mul for Vec3 {
   fn mul(self, other: Vec3) -> Vec3 {
     Vec3 { e:[self.e[0] * other.e[0],self.e[1] * other.e[1],self.e[2] * other.e[2]]}
   }
+}
+
+pub fn dot(v1: &Vec3, v2: &Vec3) -> f64 {
+    return v1.e[0]*v2.e[0] + v1.e[1]*v2.e[1] + v1.e[2]*v2.e[2];
 }
 
 // Implements scalar product

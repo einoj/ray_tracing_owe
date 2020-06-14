@@ -23,3 +23,7 @@ path = "src/ch2/vec_image.rs"
 [[bin]]
 name = "ch3"
 path = "src/ch3/gradient.rs"
+
+[[bin]]
+name = "ch4"
+path = "src/ch4/sphere.rs"
